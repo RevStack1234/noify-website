@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@theme {
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-fraunces: "Fraunces", serif;
+  --font-space: "Space Grotesk", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+
+  --color-noify-bg: #0b0b0c;
+  --color-noify-nav: #222225;
+  --color-noify-card: #0f0f11;
+  --color-noify-surface: #18181b;
+  --color-noify-input: #12151a;
+  --color-noify-form: #1b1f25;
+  --color-noify-green: #2c9f01;
+  --color-noify-green-light: #7dc553;
+  --color-noify-accent: #00ff88;
+  --color-noify-muted: #94a3b8;
+  --color-noify-text-dim: #767676;
+  --color-noify-text-sub: #bebebe;
+  --color-noify-text-label: #6f6f6f;
+  --color-noify-text-placeholder: #6c6c6c;
+  --color-noify-badge: #96c4ae;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-noify-bg);
+  color: #ffffff;
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root {
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+
+.safe-float {
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  right: calc(1.25rem + env(safe-area-inset-right, 0px));
+}
+
+.btn-green {
+  background: linear-gradient(133deg, #429101 0%, #68b400 99%);
+  border-radius: 8px;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-green:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(66, 145, 1, 0.4);
+}
+
+.btn-green:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 12px rgba(66, 145, 1, 0.2);
+}
+
+.btn-outline-green {
+  border: 3px solid transparent;
+  border-radius: 10px;
+  background:
+    linear-gradient(#0b0b0c, #0b0b0c) padding-box,
+    linear-gradient(90deg, rgba(56, 139, 6, 0.5) 0%, rgba(99, 176, 0, 0.5) 100%)
+      border-box;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-outline-green:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(99, 176, 0, 0.2);
+}
+
+.btn-outline-green:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 12px rgba(99, 176, 0, 0.1);
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0px 2px 2px 0px rgba(105, 157, 29, 0.13);
+  border-radius: 8px;
+}
+
+.hero-ring {
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background:
+    linear-gradient(#0b0b0c, #0b0b0c) padding-box,
+    linear-gradient(229deg, rgba(217, 217, 217, 0.13) 13%, rgba(34, 34, 37, 0) 97%)
+      border-box;
+}
+
+.solution-image-bg {
+  background: linear-gradient(
+    147deg,
+    #e8eae8 0%,
+    #cadfc6 36%,
+    #bbd3b5 76%,
+    #d6d5d5 100%
+  );
+}
+
+.text-gradient-green {
+  background: linear-gradient(133deg, rgba(168, 222, 124, 0.68) 0%, rgba(237, 241, 231, 0.68) 99%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tag-outline {
+  border: 1px solid rgba(203, 201, 54, 0.3);
+  border-radius: 12px;
+}
+
+.infra-card {
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.feature-card-green {
+  background: rgba(68, 147, 1, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.feature-card-green-dark {
+  background: rgba(68, 147, 1, 0.64);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.feature-card-gradient {
+  background: linear-gradient(180deg, #9fa996 11%, rgba(107, 140, 78, 0.97) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.power-section-bg {
+  background: rgba(19, 37, 2, 0.38);
+  border-radius: 12px;
+}
