@@ -33,11 +33,11 @@ export function Seo({
         url: SITE_URL,
         logo: `${SITE_URL}/images/logo-b85877.png`,
         description,
-        sameAs: [
-          "https://www.linkedin.com/company/noify-energy",
-          "https://www.instagram.com/noify.energy",
-          "https://www.facebook.com/noify.energy",
-        ],
+    sameAs: [
+      "https://www.linkedin.com/company/noify",
+      "https://www.instagram.com/noifyenergy",
+      "https://www.facebook.com/noifyelectronics",
+    ],
         contactPoint: {
           "@type": "ContactPoint",
           telephone: "+91-0000000000",

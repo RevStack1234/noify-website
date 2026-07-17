@@ -21,9 +21,9 @@ const contactLinks = [
 ] as const
 
 const socialLinks = [
-  { label: "Instagram", icon: "/images/icon-instagram.svg", href: "#" },
-  { label: "LinkedIn", icon: "/images/icon-linkedin.svg", href: "#" },
-  { label: "Facebook", icon: "/images/icon-facebook.svg", href: "#" },
+  { label: "Instagram", icon: "/images/icon-instagram.svg", href: "https://www.instagram.com/noifyenergy" },
+  { label: "LinkedIn", icon: "/images/icon-linkedin.svg", href: "https://www.linkedin.com/company/noify" },
+  { label: "Facebook", icon: "/images/icon-facebook.svg", href: "https://www.facebook.com/noifyelectronics" },
 ] as const
 
 function FooterColumn({
@@ -134,6 +134,8 @@ export function Footer() {
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="transition-opacity hover:opacity-80"
                   >
                     <img src={social.icon} alt={social.label} className="h-[14px] w-[14px]" />
