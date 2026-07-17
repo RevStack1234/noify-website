@@ -7,19 +7,28 @@ export function ScrollToHash() {
   useEffect(() => {
     const state = location.state as { scrollTo?: string } | null
 
-    if (state?.scrollTo) {
-      const element = document.getElementById(state.scrollTo)
+    const scrollToId = (id: string) => {
+      const element = document.getElementById(id)
       if (element) {
         element.scrollIntoView({ behavior: "smooth" })
+        return true
+      }
+      return false
+    }
+
+    if (state?.scrollTo) {
+      if (!scrollToId(state.scrollTo)) {
+        const t = setTimeout(() => scrollToId(state.scrollTo!), 300)
+        return () => clearTimeout(t)
       }
       return
     }
 
     if (location.hash) {
       const id = location.hash.replace("#", "")
-      const element = document.getElementById(id)
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" })
+      if (!scrollToId(id)) {
+        const t = setTimeout(() => scrollToId(id), 300)
+        return () => clearTimeout(t)
       }
     } else {
       window.scrollTo(0, 0)
