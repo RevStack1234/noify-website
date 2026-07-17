@@ -7,10 +7,17 @@ import {
   RevealLeft,
   RevealRight,
 } from "../components/motion/Reveal"
+import { Seo } from "../components/Seo"
 
 export function AboutPage() {
   return (
     <div className="min-h-screen bg-noify-bg">
+      <Seo
+        title="About Noify Energy — Building the Future of Energy Storage"
+        description="Noify Energy is on a mission to build the underlying energy storage layer that powers sustainable industrial and commercial growth through advanced lithium battery technology."
+        keywords="noify energy, about noify, energy storage company, battery manufacturer, sustainable energy"
+        path="/about"
+      />
       <Header />
 
       <main className="mx-auto max-w-[1440px] px-4 pb-8 sm:px-6 lg:px-[59px] lg:pb-5">
@@ -27,11 +34,16 @@ export function AboutPage() {
 
           <Reveal className="mb-12 flex flex-col items-center gap-8 sm:mb-16 sm:gap-10 lg:mb-24 lg:flex-row lg:items-center lg:gap-[158px]">
             <div className="h-[240px] w-full max-w-[415px] overflow-hidden rounded-3xl border border-[rgba(212,212,212,0.54)] sm:h-[347px]">
-              <img
-                src="/images/about-commitment.png"
-                alt="Our Commitment"
-                className="h-full w-full object-cover"
-              />
+              <picture>
+                <source srcSet="/images/about-commitment.webp" type="image/webp" />
+                <img
+                  src="/images/about-commitment.png"
+                  alt="Our Commitment"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              </picture>
             </div>
             <h2 className="max-w-[525px] text-center font-inter text-2xl tracking-[0.05em] text-white sm:text-3xl lg:text-4xl">
               Our Commitment to Quality
@@ -53,21 +65,31 @@ export function AboutPage() {
               </p>
             </RevealLeft>
             <RevealRight className="h-[220px] w-full max-w-[441px] shrink-0 overflow-hidden rounded-[22px] border border-[#A3A3A3] sm:h-[316px] lg:ml-auto">
-              <img
-                src="/images/about-vision-6fa52a.png"
-                alt="Where We're Headed"
-                className="h-full w-full object-cover"
-              />
+              <picture>
+                <source srcSet="/images/about-vision-6fa52a.webp" type="image/webp" />
+                <img
+                  src="/images/about-vision-6fa52a.png"
+                  alt="Where We're Headed"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </RevealRight>
           </div>
 
           <div className="relative flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-start lg:gap-[58px]">
             <RevealLeft className="h-[220px] w-full max-w-[454px] shrink-0 overflow-hidden rounded-xl border border-[#A3A3A3] sm:h-[320px]">
-              <img
-                src="/images/about-purpose-10db35.png"
-                alt="Our Purpose"
-                className="h-full w-full object-cover"
+              <picture>
+                <source srcSet="/images/about-purpose-10db35.webp" type="image/webp" />
+                <img
+                  src="/images/about-purpose-10db35.png"
+                  alt="Our Purpose"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
               />
+              </picture>
             </RevealLeft>
             <RevealRight className="flex flex-col gap-4 sm:gap-6">
               <h2 className="font-jakarta text-3xl font-bold leading-[1.4] tracking-[-0.022em] text-white sm:text-4xl sm:leading-[1.5]">

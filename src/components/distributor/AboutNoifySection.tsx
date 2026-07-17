@@ -40,11 +40,16 @@ export function AboutNoifySection() {
           </div>
 
           <div className="flex items-center justify-center lg:row-span-2">
-            <img
-              src="/images/about-noify-13262a.png"
-              alt="Noify Energy"
-              className="h-[420px] w-full max-w-[294px] rounded-xl object-cover lg:h-full lg:max-h-[591px]"
-            />
+            <picture>
+              <source srcSet="/images/about-noify-13262a.webp" type="image/webp" />
+              <img
+                src="/images/about-noify-13262a.png"
+                alt="Noify Energy"
+                className="h-[420px] w-full max-w-[294px] rounded-xl object-cover lg:h-full lg:max-h-[591px]"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
 
           <div className="flex flex-col justify-center border-b border-white/33 pb-6 lg:border-b-0 lg:pb-0">

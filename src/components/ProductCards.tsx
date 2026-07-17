@@ -4,28 +4,28 @@ import { Reveal, Stagger, StaggerItem } from "./motion/Reveal"
 const products = [
   {
     id: "NIE-51100",
-    image: "/images/product-51150-5e0cd8.png",
+    image: "/images/product-51150-5e0cd8.webp",
     title: "NIE-51100\n51.2V | 100Ah",
     description:
       "Optimized for E-Rickshaw applications with reliable performance, long cycle life, and efficient daily operation.",
   },
   {
     id: "NIE-51200",
-    image: "/images/product-51200-v2-66d8ee.png",
+    image: "/images/product-51200-v2-66d8ee.webp",
     title: "NIE-51200\n51.2V | 200Ah",
     description:
       "Built for E-Rickshaw and EV mobility, delivering extended runtime and dependable power output.",
   },
   {
     id: "NIE-64100",
-    image: "/images/product-64100-39de47.png",
+    image: "/images/product-64100-39de47.webp",
     title: "NIE-64100\n64V | 100Ah",
     description:
       "Engineered for high-performance E-Rickshaw applications with efficient energy delivery and long service life.",
   },
   {
     id: "NIE-64200",
-    image: "/images/product-64200-78d470.png",
+    image: "/images/product-64200-78d470.webp",
     title: "NIE-64200\n64V | 200Ah",
     description:
       "Heavy-duty lithium battery for E-Rickshaws with solar backup compatibility and dependable high-capacity performance.",

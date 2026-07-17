@@ -3,11 +3,16 @@ import { HeroReveal } from "../motion/Reveal"
 export function SolutionsHero() {
   return (
     <section className="relative h-[500px] w-full overflow-hidden bg-[#020D09] sm:h-[550px] lg:h-[600px]">
-      <img
-        src="/images/solutions-hero-590dfa.png"
-        alt=""
-        className="absolute inset-0 h-full w-full object-cover object-center"
-      />
+      <picture>
+        <source srcSet="/images/solutions-hero-590dfa.webp" type="image/webp" />
+        <img
+          src="/images/solutions-hero-590dfa.png"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </picture>
       <div className="absolute inset-0 bg-[rgba(2,13,9,0.6)]" />
       <div className="relative z-10 mx-auto flex h-full max-w-[1440px] flex-col items-center justify-center px-6 text-center">
         <HeroReveal className="flex flex-col items-center gap-4">

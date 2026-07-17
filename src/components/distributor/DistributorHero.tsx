@@ -7,11 +7,16 @@ export function DistributorHero() {
   return (
     <section className="w-full">
       <HeroReveal>
-        <img
-          src="/images/distributor-hero-7c2940.png"
-          alt="Advanced Lithium Battery Solutions"
-          className="h-[420px] w-full object-cover object-center sm:h-[500px] lg:h-[579px]"
-        />
+        <picture>
+          <source srcSet="/images/distributor-hero-7c2940.webp" type="image/webp" />
+          <img
+            src="/images/distributor-hero-7c2940.png"
+            alt="Advanced Lithium Battery Solutions"
+            className="h-[420px] w-full object-cover object-center sm:h-[500px] lg:h-[579px]"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
       </HeroReveal>
 
       <div className="flex justify-center bg-noify-bg px-6 py-8 lg:py-11">

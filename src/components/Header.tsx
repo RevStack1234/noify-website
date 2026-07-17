@@ -23,11 +23,14 @@ export function Header({ inset = false, overlay = false }: { inset?: boolean; ov
   const headerContent = (
     <div className="relative mx-auto flex h-16 max-w-[1312px] items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8">
       <Link to={routes.home} className="shrink-0" onClick={() => setMenuOpen(false)}>
-        <img
-          src="/images/logo-b85877.png"
-          alt="Noify"
-          className="h-11 w-[112px] object-contain object-left sm:h-[56px] sm:w-[144px]"
-        />
+        <picture>
+          <source srcSet="/images/logo-b85877.webp" type="image/webp" />
+          <img
+            src="/images/logo-b85877.png"
+            alt="Noify"
+            className="h-11 w-[112px] object-contain object-left sm:h-[56px] sm:w-[144px]"
+          />
+        </picture>
       </Link>
 
       <nav className="hidden items-center gap-5 lg:flex xl:gap-10">

@@ -57,14 +57,10 @@ export function FleetIntegrationSection() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         enquiry_type: "Commercial Fleet Integration",
-        full_name: form.companyName,
         company_name: form.companyName,
-        state: "",
-        phone: "",
         email: form.email,
-        message:
-          `Target Application Grid: ${form.application}\n` +
-          `Estimated Order Volume: ${form.orderVolume}`,
+        target_application_grid: form.application,
+        estimated_order_volume: form.orderVolume,
       }),
     })
       .then((res) => {

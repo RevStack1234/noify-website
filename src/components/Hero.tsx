@@ -23,13 +23,15 @@ export function Hero() {
             transition={{ duration: 1.45, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           />
           <motion.img
-            src="/images/hero-battery-v2-1dc189.png"
+            src="/images/hero-battery-v2-1dc189.webp"
             alt="Noify E-Rickshaw and Battery"
             className="absolute left-0 top-[127px] z-10 h-[548px] w-[604px] object-contain"
             style={{ filter: "drop-shadow(0px 2px 2px rgba(70, 149, 1, 1))" }}
             initial={reduce ? false : { opacity: 0, x: 28 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+            fetchPriority="high"
+            decoding="async"
           />
         </div>
       </div>
@@ -54,7 +56,7 @@ export function Hero() {
                 <span className="text-[#2C9F01]">Battery Solutions </span>
                 <span className="text-white">for Global B2B markets.</span>
               </h1>
-              <p className="max-w-[461px] font-inter text-sm tracking-[0.05em] text-[#94A3B8] sm:text-base">
+              <p className="max-w-[461px] font-inter text-sm tracking-[0.05em] text-[#CBD5E1] sm:text-base">
                 Scalable, high-performance power infrastructure engineered for industrial
                 reliability.
               </p>
@@ -98,10 +100,12 @@ export function Hero() {
           <div className="hero-ring absolute h-[220px] w-[220px] sm:h-[280px] sm:w-[280px]" />
           <div className="hero-ring absolute h-[190px] w-[190px] sm:h-[250px] sm:w-[250px]" />
           <img
-            src="/images/hero-battery-v2-1dc189.png"
+            src="/images/hero-battery-v2-1dc189.webp"
             alt="Noify E-Rickshaw and Battery"
             className="relative z-10 h-full w-auto max-w-full object-contain"
             style={{ filter: "drop-shadow(0px 2px 2px rgba(70, 149, 1, 1))" }}
+            fetchPriority="high"
+            decoding="async"
           />
         </HeroReveal>
       </div>

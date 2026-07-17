@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { enquiry_type, full_name, company_name, state, phone, email, message } = req.body
+    const { enquiry_type, full_name, company_name, state, phone, email, message, target_application_grid, estimated_order_volume } = req.body
 
     const transporter = nodemailer.createTransport({
       service: process.env.SMTP_SERVICE || "gmail",
@@ -19,13 +19,26 @@ export default async function handler(req, res) {
       },
     })
 
-    const contactFields = [
-      { label: "Full Name", value: full_name },
-      { label: "Email Address", value: email },
-      { label: "Phone Number", value: phone },
-      { label: "Company", value: company_name || "N/A" },
-      { label: "State", value: state || "N/A" },
-    ].filter((f) => f.value && String(f.value).trim())
+    let contactFields = [];
+    let displayMessage = message;
+
+    if (enquiry_type === "Commercial Fleet Integration") {
+      contactFields = [
+        { label: "Company Entity / Registration Legal Name", value: company_name },
+        { label: "Direct Procurement Officer Corporate Email", value: email },
+        { label: "Target Application Grid", value: target_application_grid },
+        { label: "Estimated Order Volume", value: estimated_order_volume },
+      ].filter((f) => f.value && String(f.value).trim())
+      displayMessage = ""; // No message field for this form
+    } else {
+      contactFields = [
+        { label: "Full Name", value: full_name },
+        { label: "Email Address", value: email },
+        { label: "Phone Number", value: phone },
+        { label: "Company", value: company_name || "N/A" },
+        { label: "State", value: state || "N/A" },
+      ].filter((f) => f.value && String(f.value).trim())
+    }
 
     const esc = (v) =>
       String(v)
@@ -36,7 +49,7 @@ export default async function handler(req, res) {
     const text = [
       `Enquiry Type: ${enquiry_type}`,
       ...contactFields.map((f) => `${f.label}: ${f.value}`),
-      message ? `Message: ${message}` : ""
+      displayMessage ? `Message: ${displayMessage}` : ""
     ].filter(Boolean).join("\n")
 
     const rows = contactFields
@@ -79,14 +92,14 @@ export default async function handler(req, res) {
             </td>
           </tr>
           ${
-            message
+            displayMessage
               ? `
           <tr>
             <td style="padding:16px 32px 32px 32px;">
               <div style="background:#1c1c1c;border-radius:8px;padding:24px;">
                 <h3 style="margin:0 0 16px 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#68b400;letter-spacing:1px;text-transform:uppercase;">Message</h3>
                 <div style="border-left:2px solid #68b400;padding-left:16px;">
-                  <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#e5e5e5;line-height:1.6;white-space:pre-line;">${esc(message)}</p>
+                  <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#e5e5e5;line-height:1.6;white-space:pre-line;">${esc(displayMessage)}</p>
                 </div>
               </div>
             </td>
@@ -106,7 +119,7 @@ export default async function handler(req, res) {
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
       to: process.env.SMTP_TO || process.env.SMTP_USER,
       replyTo: email || undefined,
-      subject: `New ${enquiry_type} from ${full_name}`,
+      subject: `New ${enquiry_type} from ${full_name || company_name}`,
       text,
       html,
     })

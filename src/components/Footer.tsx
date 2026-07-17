@@ -71,11 +71,14 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-[1.5fr_repeat(5,1fr)] lg:gap-10">
             <div className="col-span-2 flex flex-col gap-4 sm:col-span-3 lg:col-span-1">
               <Link to={routes.home}>
-                <img
-                  src="/images/logo-footer-7ef9d6.png"
-                  alt="Noify"
-                  className="h-12 w-[140px] object-contain object-left sm:h-[58px] sm:w-[168px]"
-                />
+                <picture>
+                  <source srcSet="/images/logo-footer-7ef9d6.webp" type="image/webp" />
+                  <img
+                    src="/images/logo-footer-7ef9d6.png"
+                    alt="Noify"
+                    className="h-12 w-[140px] object-contain object-left sm:h-[58px] sm:w-[168px]"
+                  />
+                </picture>
               </Link>
               <p className="max-w-[243px] font-inter text-sm tracking-[0.04em] text-white/68">
                 Premium lithium batteries for E-Rickshaw, EV and commercial fleets manufactured for

@@ -4,6 +4,7 @@ import { Reveal, Stagger, StaggerItem } from "../components/motion/Reveal"
 import { SolutionsHero } from "../components/solutions/SolutionsHero"
 import { masterCatalogPdf } from "../config/navigation"
 import { motion } from "motion/react"
+import { Seo } from "../components/Seo"
 
 type Product = {
   model: string
@@ -18,21 +19,21 @@ const series512: Product[] = [
     specs: "51.2V · 100AH",
     description:
       "Optimized for E-Rickshaw applications with reliable performance, long cycle life, and efficient daily operation.",
-    image: "/images/product-51150-5e0cd8.png",
+    image: "/images/product-51150-5e0cd8.webp",
   },
   {
     model: "NIE51150",
     specs: "51.2V · 150AH",
     description:
       "Built for E-Rickshaw and EV mobility, delivering extended runtime and dependable power output.",
-    image: "/images/product-51150-5e0cd8.png",
+    image: "/images/product-51150-5e0cd8.webp",
   },
   {
     model: "NIE51200",
     specs: "51.2V · 200AH",
     description:
       "High-capacity battery for E-Rickshaws with solar backup support, offering maximum runtime and reliable performance.",
-    image: "/images/product-51200-v2-66d8ee.png",
+    image: "/images/product-51200-v2-66d8ee.webp",
   },
 ]
 
@@ -42,21 +43,21 @@ const series64: Product[] = [
     specs: "64V · 100AH",
     description:
       "Engineered for high-performance E-Rickshaw applications with efficient energy delivery and long service life.",
-    image: "/images/product-64100-39de47.png",
+    image: "/images/product-64100-39de47.webp",
   },
   {
     model: "NIE64150",
     specs: "64V · 150AH",
     description:
       "Designed for demanding E-Rickshaw operations, providing higher efficiency, durability, and consistent output..",
-    image: "/images/product-64100-39de47.png",
+    image: "/images/product-64100-39de47.webp",
   },
   {
     model: "NIE64200",
     specs: "64V · 200AH",
     description:
       "Heavy-duty lithium battery for E-Rickshaws with solar backup compatibility and dependable high-capacity performance.",
-    image: "/images/product-64200-78d470.png",
+    image: "/images/product-64200-78d470.webp",
   },
 ]
 
@@ -109,6 +110,12 @@ function ProductSeries({ title, products }: { title: string; products: Product[]
 export function SolutionsPage() {
   return (
     <div className="min-h-screen bg-noify-bg">
+      <Seo
+        title="Noify Energy Solutions — Lithium Batteries for E-Rickshaw, Solar & Industrial Use"
+        description="Explore Noify Energy's complete range of lithium-ion battery solutions engineered for E-Rickshaws, solar storage, telecom and industrial applications with long service life."
+        keywords="noify energy solutions, lithium battery solutions, e-rickshaw battery, solar lithium battery, industrial battery, energy storage systems"
+        path="/solutions"
+      />
       <Header inset />
       <main className="m-0 p-0">
         <SolutionsHero />

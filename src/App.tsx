@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
+import { Route, Routes, useLocation } from "react-router-dom"
 import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import { ScrollToHash } from "./components/ScrollToHash"
 import { WhatsAppFloat } from "./components/WhatsAppFloat"
@@ -8,7 +8,7 @@ import { HomePage } from "./pages/HomePage"
 import { SolutionsPage } from "./pages/SolutionsPage"
 import { pageFade } from "./motion/variants"
 
-function AnimatedRoutes() {
+export function AppRoutes() {
   const location = useLocation()
   const reduce = useReducedMotion()
 
@@ -33,13 +33,13 @@ function AnimatedRoutes() {
   )
 }
 
-function App() {
+export function App() {
   return (
-    <BrowserRouter>
+    <>
       <ScrollToHash />
-      <AnimatedRoutes />
+      <AppRoutes />
       <WhatsAppFloat />
-    </BrowserRouter>
+    </>
   )
 }
 

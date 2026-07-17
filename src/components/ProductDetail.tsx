@@ -42,11 +42,16 @@ export function ProductDetail() {
                   className="mx-auto flex h-[344px] w-full max-w-[339px] items-center justify-center rounded-[10px] border-[1.2px] border-[rgba(36,36,36,0.48)] bg-[#0F0F11] p-6 lg:mx-0"
                   style={{ boxShadow: "2px 4px 4px 0px rgba(69, 148, 1, 0.09)" }}
                 >
-                  <img
-                    src="/images/product-detail-3a24ba.png"
-                    alt="NIE-51100 Battery"
-                    className="h-auto w-full max-w-[300px] object-contain"
+                  <picture>
+                    <source srcSet="/images/product-detail-3a24ba.webp" type="image/webp" />
+                    <img
+                      src="/images/product-detail-3a24ba.png"
+                      alt="NIE-51100 Battery"
+                      className="h-auto w-full max-w-[300px] object-contain"
+                      loading="lazy"
+                      decoding="async"
                   />
+                </picture>
                 </div>
               </RevealLeft>
 
