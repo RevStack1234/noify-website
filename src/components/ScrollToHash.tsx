@@ -18,7 +18,7 @@ export function ScrollToHash() {
 
     if (state?.scrollTo) {
       if (!scrollToId(state.scrollTo)) {
-        const t = setTimeout(() => scrollToId(state.scrollTo!), 300)
+        const t = setTimeout(() => scrollToId(state.scrollTo!), 500)
         return () => clearTimeout(t)
       }
       return
@@ -27,7 +27,7 @@ export function ScrollToHash() {
     if (location.hash) {
       const id = location.hash.replace("#", "")
       if (!scrollToId(id)) {
-        const t = setTimeout(() => scrollToId(id), 300)
+        const t = setTimeout(() => scrollToId(id), 500)
         return () => clearTimeout(t)
       }
     } else {

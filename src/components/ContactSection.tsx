@@ -250,7 +250,7 @@ export function ContactSection() {
 
             <RevealRight>
               <div className="rounded-3xl bg-noify-form p-5 sm:p-8">
-                <form className="flex flex-col gap-5" onSubmit={onSubmit}>
+                <form id="contact-form" className="flex flex-col gap-5" onSubmit={onSubmit}>
                     <div className="flex flex-col gap-2">
                       <label className="font-jakarta text-sm leading-[1.36] tracking-[0.01em] text-noify-text-label">
                         ENQUIRY TYPE

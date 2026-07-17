@@ -7,9 +7,9 @@ export function useContactScroll() {
 
   return () => {
     if (pathname === routes.home) {
-      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+      document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })
     } else {
-      navigate(routes.home, { state: { scrollTo: "contact" } })
+      navigate(routes.home, { state: { scrollTo: "contact-form" } })
     }
   }
 }
