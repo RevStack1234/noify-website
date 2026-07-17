@@ -62,7 +62,7 @@ export default async function handler(req, res) {
         <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;margin:0 auto;background:#171717;border-radius:12px;overflow:hidden;border:1px solid #262626;">
           <tr>
             <td style="padding:40px 32px 0 32px;text-align:center;">
-              <span style="font-family:Arial,Helvetica,sans-serif;font-size:24px;font-weight:800;color:#ffffff;letter-spacing:1px;">NOIFY <span style="color:#68b400;">ENERGY</span></span>
+              <img src="https://www.noifyenergy.com/images/logo-footer-7ef9d6.png" alt="Noify Energy" width="160" style="display:block;margin:0 auto;height:auto;max-width:160px;border:0;" />
             </td>
           </tr>
           <tr>
