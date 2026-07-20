@@ -23,7 +23,7 @@ const contactLinks = [
 const socialLinks = [
   { label: "Instagram", icon: "/images/icon-instagram.svg", href: "https://www.instagram.com/noifyenergy" },
   { label: "LinkedIn", icon: "/images/icon-linkedin.svg", href: "https://www.linkedin.com/company/noify" },
-  { label: "Facebook", icon: "/images/icon-facebook.svg", href: "https://www.facebook.com/noifyelectronics" },
+  { label: "Facebook", icon: "/images/icon-facebook.svg", href: "https://www.facebook.com/noifyenergy?ref=1" },
 ] as const
 
 function FooterColumn({

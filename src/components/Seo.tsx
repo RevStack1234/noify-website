@@ -36,7 +36,7 @@ export function Seo({
     sameAs: [
       "https://www.linkedin.com/company/noify",
       "https://www.instagram.com/noifyenergy",
-      "https://www.facebook.com/noifyelectronics",
+      "https://www.facebook.com/noifyenergy?ref=1",
     ],
         contactPoint: {
           "@type": "ContactPoint",
